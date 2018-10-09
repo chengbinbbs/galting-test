@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  undertow:
+     worker-threads: 20
+     buffer-size: 512
+     io-threads: 2
+  compression:
+    enabled: true
+    min-response-size: 1024
+
+spring:
+  application:
+    name: galting-test
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+    serialization:
+      INDENT_OUTPUT: true
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+
+
+## LOGGING
+logging:
+  path: F://log
+  config: classpath:logback.xml
+  level:
+    application: INFO
